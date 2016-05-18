@@ -1,0 +1,14 @@
+﻿  Sender.cpp
+  XmlParser.cpp
+  xmlElementParts.cpp
+  XmlElement.cpp
+  XmlDocument.cpp
+  Tokenizer.cpp
+  Utilities.cpp
+  Sockets.cpp
+  Logger.cpp
+  Cpp11-BlockingQueue.cpp
+  HttpMessage.cpp
+  FileSystem.cpp
+  Generating Code...
+  Sender.vcxproj -> C:\Users\Varun\Desktop\Project4\Debug\Sender.exe

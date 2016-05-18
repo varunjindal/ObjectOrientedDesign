@@ -1,0 +1,128 @@
+Author - Varun Jindal
+Course - CSE687 Spring 2016 - Project #4
+
+***** IF Run or Compile Fails, please let me know. Sometimes my system gives some problem of x32 and x64 compiler. I can provide a new run.bat in that case. 
+
+Steps to start the project
+-------------------------------------------------------------------------------------------------------------------
+STEP1 - compile.bat 	// used to compile
+STEP2 - run.bat	               // will run the executive with command line arguments.
+	Run.bat:
+		start "Server" Debug\Server.exe 7080[SERVER PORT]
+		start "Client" Debug\Client.exe 7081[CLIENT PORT] 7080[SERVER PORT]
+	  
+Notes :
+-------------------------------------------------------------------------------
+- 9080 is port on which server  will run, you can change from command line arguments.
+- 9081 is port on which client  will run, you can change from command line arguments.
+- client and server port can be change from command line arguments as describe below. This thing has been confirmed from Professor.
+- For File upload you can upload files from any folder, just provide full file path
+- Both server and client have two root folder which are "ServerDrive" and "ClientDrive".
+- File download will be save on "ClientDrive" folder.
+
+Flow of Application:
+
+- There is a folder = "user1input" which will contain different xml files having info about user activities performed.
+- All the files in this folder should be number 1,2,3,4............. and they will be executed in that order only.
+- Place all the files at once before running the project
+
+Sample Scenario:
+
+Activity 1: 
+			User wants to checkin a file and provides 2 dependent file names.
+			
+			XML =
+			<test>
+				<Operation>Check-In</Operation>												--------- Have to be "Check-In"
+				<FileName>C:\Users\Varun\Desktop\Project4\TestFiles\Sockets.cpp</FileName>   -------- Always put the full path
+				<DepFlag>Yes</DepFlag>														 -------- Mandatory : Values = {"Yes","No"}
+				<Dependencies>
+					<DepFile>Sockets.h</DepFile>											 -------- Only file name *No Path
+					<DepFile>Logger.h</DepFile>			
+				</Dependencies>
+			</test>
+File : 1.xml is present in user1input
+
+Activity 2: 
+			User wants to checkin another file and provides 1 dependent file names.
+			XML =
+			<test>
+				<Operation>Check-In</Operation>
+				<FileName>C:\Users\Varun\Desktop\Project4\TestFiles\Logger.cpp</FileName>		--------- Same as above
+				<DepFlag>Yes</DepFlag>
+				<Dependencies>
+					<DepFile>Sockets.cpp</DepFile>		
+				</Dependencies>
+			</test>
+File : 2.xml is present in user1input
+
+Activity 3: 
+
+			User wants to checkin another file and provides no dependencies.
+			XML =
+			<test>
+				<Operation>Check-In</Operation>															--------- Have to be "Check-In"
+				<FileName>C:\Users\Varun\Desktop\Project4\TestFiles\Logger.h</FileName>					-------- Always put the full path
+				<DepFlag>No</DepFlag>																	-------- Mandatory : Values = {"Yes","No"}
+				<Dependencies>
+																								------- Empty as User didn't provide any dependencies
+				</Dependencies>
+			</test>
+File : 3.xml is present in user1input	
+		
+Activity 4: 
+
+			User wants to checkin another file and provides no dependencies.
+			XML =
+			<test>
+				<Operation>Check-In</Operation>															--------- Have to be "Check-In"
+				<FileName>C:\Users\Varun\Desktop\Project4\TestFiles\Sockets.h</FileName>					-------- Always put the full path
+				<DepFlag>No</DepFlag>																	-------- Mandatory : Values = {"Yes","No"}
+				<Dependencies>
+																								------- Empty as User didn't provide any dependencies
+				</Dependencies>
+			</test>
+
+File : 4.xml is present in user1input
+
+Activity 5: 
+
+			User wants to extract a file and with all the dependencies
+			XML =
+			<test>
+				<Operation>Extraction</Operation>												--------- Have to be "Operation"
+				<FileName>Logger.cpp</FileName>													-------- Only file name *No Path	
+				<ExtractWithDeps>Yes</ExtractWithDeps>											-------- Mandatory : Values = {"Yes","No"}
+			</test>
+File : 5.xml is present in user1input
+
+Activity 6: 
+
+			User wants to extract a file and with all the dependencies
+			XML =
+			<test>
+				<Operation>Extraction</Operation>												--------- Have to be "Operation"
+				<FileName>Sockets.cpp</FileName>												--------  Only file name *No Path	
+				<ExtractWithDeps>No</ExtractWithDeps>											--------  Mandatory : Values = {"Yes","No"}
+			</test>
+File : 6.xml is present in user1input
+
+Results:
+	All the files that a client downloads/extracts gets saved in ../ClientDrive folder
+	All the files that a client uplaod gets saved in revelevant directories in ../ServerDrive folder
+	
+
+Please contact me on vjindal@syr.edu if you face any problems in compile or run.
+Thanks
+Varun
+
+
+
+
+
+
+
+
+
+	
+			

@@ -1,0 +1,5 @@
+<test>
+	<Operation>Extraction</Operation>
+	<FileName>Sockets.cpp</FileName>
+	<ExtractWithDeps>Yes</ExtractWithDeps>
+</test>

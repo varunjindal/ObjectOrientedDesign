@@ -1,0 +1,9 @@
+
+  <Dependencies>
+    <dep>
+      Sockets.h
+    </dep>
+    <dep>
+      Logger.h
+    </dep>
+  </Dependencies>

@@ -1,0 +1,6 @@
+
+  <Dependencies>
+    <dep>
+      Sockets.cpp
+    </dep>
+  </Dependencies>

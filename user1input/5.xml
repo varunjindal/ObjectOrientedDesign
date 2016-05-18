@@ -1,0 +1,5 @@
+<test>
+	<Operation>Extraction</Operation>
+	<FileName>Logger.cpp</FileName>
+	<ExtractWithDeps>No</ExtractWithDeps>
+</test>

@@ -1,0 +1,8 @@
+<test>
+	<Operation>Check-In</Operation>
+	<FileName>C:\Users\Varun\Desktop\Project4\TestFiles\Logger.cpp</FileName>
+	<DepFlag>Yes</DepFlag>
+	<Dependencies>
+		<DepFile>Sockets.cpp</DepFile>		
+	</Dependencies>
+</test>
